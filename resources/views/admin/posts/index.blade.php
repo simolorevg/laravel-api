@@ -17,6 +17,13 @@
                     <td>{{ $project->title }}</td>
                     <td>{{ $project->post }}</td>
                     <td>{{ $project->author }}</td>
+                    <td>
+                        <form action="{{ route('projects.destroy', $project->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">ELIMINA</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
