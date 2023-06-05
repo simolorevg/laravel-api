@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <h2>Pagina index posts</h2>
+    <h2 class="text-center">Tutti i post</h2>
     <table class="table">
         <thead>
             <tr>
@@ -18,11 +18,17 @@
                     <td>{{ $project->post }}</td>
                     <td>{{ $project->author }}</td>
                     <td>
-                        <form action="{{ route('projects.destroy', $project->id) }}" method="POST">
+                        <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">ELIMINA</button>
+                            <button type="submit" class="btn btn-danger"
+                                onclick="return confirm('Do you want delete this item?')">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
                         </form>
+                        <button class="btn btn-warning" href="{{ route('admin.projects.edit', $project->id) }}">
+                            <i class="fa-regular fa-pen-to-square"></i>
+                        </button>
                     </td>
                 </tr>
             @endforeach

@@ -17,7 +17,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        return view('admin.posts.index', compact('projects'));
+        return view('admin.projects.index', compact('projects'));
     }
 
     /**
@@ -44,7 +44,7 @@ class ProjectController extends Controller
         $newproject->post = $data['post'];
         $newproject->author = $data['author'];
         $newproject->save();
-        return redirect()->route('posts.show', $newproject->id);
+        return redirect()->route('admin.projects.show', $newproject->id);
     }
 
     /**
@@ -55,7 +55,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view('posts.show', compact('project'));
+        return view('admin.projects.show', compact('project'));
     }
 
     /**
@@ -66,7 +66,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('posts.edit', compact('project'));
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -80,7 +80,7 @@ class ProjectController extends Controller
     {
         $data = $request->all();
         $project->update($data);
-        return redirect()->route('posts.show', $project->id);
+        return redirect()->route('admin.projects.show', $project->id);
     }
 
     /**
@@ -92,6 +92,6 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route('posts.index');
+        return redirect()->route('admin.projects.index');
     }
 }
