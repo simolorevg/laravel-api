@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <form action="{{ route('projects.store') }}" method="POST">
+    <form action="{{ route('admin.projects.store') }}" method="POST">
         @csrf
         <label for="title">Titolo</label>
         <input type="text" name="title" id="title">
