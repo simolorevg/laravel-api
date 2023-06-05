@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    <h2 class="text-center">Crea un post</h2>
     <form action="{{ route('admin.projects.store') }}" method="POST">
         @csrf
         <label for="title">Titolo</label>
