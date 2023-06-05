@@ -32,5 +32,4 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
         }
     );
 
-
 require __DIR__ . '/auth.php';

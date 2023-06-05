@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
     <h2 class="text-center">Tutti i post</h2>
+    <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">
+        Crea nuovo post
+    </a>
     <table class="table">
         <thead>
             <tr>
