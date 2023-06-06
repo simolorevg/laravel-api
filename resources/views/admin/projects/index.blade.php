@@ -32,7 +32,7 @@
                                         <i class="fa-regular fa-trash-can"></i>
                                     </button>
                                 </form>
-                                <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project->id) }}">
+                                <a class="btn btn-warning mx-3" href="{{ route('admin.projects.edit', $project->id) }}">
                                     <i class="fa-regular fa-pen-to-square"></i>
                                 </a>
                                 <a class="btn btn-primary" href="{{ route('admin.projects.show', $project->id) }}">

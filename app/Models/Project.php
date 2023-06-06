@@ -10,7 +10,8 @@ class Project extends Model
     protected $fillable = [
         'title',
         'post',
-        'author'
+        'author',
+        'slug '
     ];
     use HasFactory;
 }
