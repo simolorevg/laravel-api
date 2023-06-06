@@ -8,7 +8,7 @@
         <label for="post">Post</label>
         <input type="text" name="post" id="post">
         <label for="author">Autore</label>
-        <input type="text" name="author" id="author">
+        <input type="text" name="author" id="author" value="{{ Auth::user()->name }}">
         <button type="submit" class="btn btn-primary">INVIA</button>
     </form>
 @endsection

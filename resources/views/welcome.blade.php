@@ -1,4 +1,4 @@
 @extends('layouts.app')
 @section('content')
-    <h1>Benvenuto nel sito, loggati o registrati</h1>
+    <h1>WELCOME TO THE WEBSITE</h1>
 @endsection
