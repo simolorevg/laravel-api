@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Project;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreProjectRequest;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -36,13 +37,11 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $newproject = new Project();
-        $newproject->title = $data['title'];
-        $newproject->post = $data['post'];
-        $newproject->author = $data['author'];
+        $newproject->fill($data);
         $newproject->save();
         return redirect()->route('admin.projects.show', $newproject->id);
     }

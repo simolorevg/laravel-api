@@ -3,6 +3,15 @@
     <form action="{{ route('admin.projects.update', $project) }}" method="POST">
         @csrf
         @method('PUT')
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         <label for="title">Titolo</label>
         <input type="text" name="title" id="title" value="{{ $project->title }}">
         <label for="post">Post</label>
