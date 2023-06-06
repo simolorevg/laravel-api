@@ -1,3 +1,14 @@
 @use './admin/index.scss';
+@use './admin/edit.scss';
 @import "@fortawesome/fontawesome-free/css/all.css";
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+.my-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 20px;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
+}

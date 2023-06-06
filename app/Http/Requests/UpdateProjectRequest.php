@@ -33,11 +33,11 @@ class UpdateProjectRequest extends FormRequest
     {
         return [
             'title.required' => 'Il titolo è richiesto',
-            'title.min' => 'Il titolo deve avere minimo :min caratteri',
-            'title.max' => 'Il titolo deve avere meno di :max caratteri',
+            'title.min' => 'Il titolo deve avere minimo 3 caratteri',
+            'title.max' => 'Il titolo deve avere meno di 100 caratteri',
             'post.required' => 'Il progetto è richiesto',
-            'post.min' => 'Il progetto deve avere : min caratteri',
-            'post.max' => 'Il progetto deve avere meno di :max caratteri',
+            'post.min' => 'Il progetto deve avere 10 caratteri',
+            'post.max' => 'Il progetto deve avere meno di 500 caratteri',
             'author.required' => 'Autore richiesto'
         ];
     }
