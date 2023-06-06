@@ -1,15 +1,15 @@
 @extends('layouts.app')
 @section('content')
-    <h2 class="text-center">Tutti i post</h2>
+    <h2 class="text-center">Tutti i progetti</h2>
     <a class="btn btn-primary" href="{{ route('admin.projects.create') }}">
-        Crea nuovo post
+        Crea nuovo progetto
     </a>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Title</th>
-                <th scope="col">Post</th>
+                <th scope="col">Progetto</th>
                 <th scope="col">Author</th>
             </tr>
         </thead>
