@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
+    public function projectDetail()
+    {
+        return $this->hasOne(Type::class);
+    }
     protected $fillable = [
         'title',
         'post',
