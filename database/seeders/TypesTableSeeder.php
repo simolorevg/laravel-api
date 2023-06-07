@@ -20,6 +20,7 @@ class TypesTableSeeder extends Seeder
             $newType = new Type();
             $newType->type = $faker->word();
             $newType->slug = $faker->text();
+            $newType->save();
         }
     }
 }
