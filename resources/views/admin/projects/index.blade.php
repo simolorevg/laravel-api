@@ -10,8 +10,9 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Title</th>
-                    <th scope="col">Progetto</th>
+                    <th scope="col">Project</th>
                     <th scope="col">Author</th>
+                    <th scope="col">Type</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -22,6 +23,7 @@
                         <td>{{ $project->title }}</td>
                         <td>{{ $project->post }}</td>
                         <td>{{ $project->author }}</td>
+                        <td>{{ $project->projectDetail?->type }}</td>
                         <td>
                             <div class="container d-flex g-2">
                                 <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
