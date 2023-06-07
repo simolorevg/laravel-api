@@ -9,7 +9,7 @@ class Project extends Model
 {
     public function projectDetail()
     {
-        return $this->hasOne(Type::class);
+        return $this->hasMany(Type::class);
     }
     protected $fillable = [
         'title',
