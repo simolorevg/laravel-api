@@ -13,6 +13,7 @@
                     <th scope="col">Project</th>
                     <th scope="col">Author</th>
                     <th scope="col">Type</th>
+                    <th scope="col">Technology</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -24,6 +25,7 @@
                         <td>{{ $project->post }}</td>
                         <td>{{ $project->author }}</td>
                         <td>{{ $project->type?->type }}</td>
+                        <td>{{ $project->technologies?->name }}</td>
                         <td>
                             <div class="container d-flex g-2">
                                 <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
