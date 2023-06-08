@@ -23,7 +23,7 @@
                         <td>{{ $project->title }}</td>
                         <td>{{ $project->post }}</td>
                         <td>{{ $project->author }}</td>
-                        <td>{{ $project->projectDetail?->type }}</td>
+                        <td>{{ $project->type?->type }}</td>
                         <td>
                             <div class="container d-flex g-2">
                                 <form action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
