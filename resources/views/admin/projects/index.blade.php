@@ -2,9 +2,14 @@
 @section('content')
     <h2 class="text-center">Tutti i progetti</h2>
     <div class="my-container">
-        <a class="btn btn-primary my-3" href="{{ route('admin.projects.create') }}">
-            Crea nuovo progetto
-        </a>
+        <div class="d-flex flex-row justify-space-between">
+            <a class="btn btn-primary my-3" href="{{ route('admin.projects.create') }}">
+                Crea nuovo progetto
+            </a>
+            <a href="btn btn-primary my-3" href="{{ route('admin.projects.technology.create') }}">
+                Crea nuova tecnologia
+            </a>
+        </div>
         <table class="table rounded-2">
             <thead>
                 <tr>
@@ -25,7 +30,6 @@
                         <td>{{ $project->post }}</td>
                         <td>{{ $project->author }}</td>
                         <td>{{ $project->type?->type }}</td>
-                        {{-- @dump($project->technologies); --}}
                         <td>
                             @forelse ($project->technologies as $technology)
                                 {{ $technology->typology }}

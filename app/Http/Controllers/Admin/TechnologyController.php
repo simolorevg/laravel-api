@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreTechnologyRequest;
+use App\Http\Requests\UpdateTechnologyRequest;
 use App\Models\Technology;
 use Illuminate\Http\Request;
 
@@ -34,7 +36,7 @@ class TechnologyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTechnologyRequest $request)
     {
         $data = $request->validated();
         $newTech = new Technology();
@@ -72,8 +74,11 @@ class TechnologyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateTechnologyRequest $request, Technology $technology)
     {
+        $data = $request->validated();
+        $technology->update($data);
+        return redirect()->route('admin.projects.index');
     }
 
     /**
@@ -82,8 +87,9 @@ class TechnologyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Technology $technology)
     {
-        //
+        $technology->delete();
+        return redirect()->route('admin.projects.index');
     }
 }
