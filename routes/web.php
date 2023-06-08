@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TechnologyController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -29,6 +30,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
         function () {
             Route::get('/', [ProjectController::class, 'index'])->name('dashboard');
             Route::resource('projects', ProjectController::class);
+            Route::resource('technologies', TechnologyController::class);
         }
     );
 

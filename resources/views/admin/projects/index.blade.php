@@ -6,7 +6,7 @@
             <a class="btn btn-primary my-3" href="{{ route('admin.projects.create') }}">
                 Crea nuovo progetto
             </a>
-            <a href="btn btn-primary my-3" href="{{ route('admin.projects.technology.create') }}">
+            <a class="btn btn-primary my-3" href="{{ route('admin.technologies.create') }}">
                 Crea nuova tecnologia
             </a>
         </div>
