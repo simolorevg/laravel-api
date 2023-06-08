@@ -2,7 +2,7 @@
 @section('content')
     <h2 class="text-center">Tutti i progetti</h2>
     <div class="my-container">
-        <div class="d-flex flex-row justify-space-between">
+        <div class="d-flex flex-row justify-content-between">
             <a class="btn btn-primary my-3" href="{{ route('admin.projects.create') }}">
                 Crea nuovo progetto
             </a>

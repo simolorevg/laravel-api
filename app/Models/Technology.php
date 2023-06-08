@@ -11,5 +11,8 @@ class Technology extends Model
     {
         return $this->belongsToMany(Project::class);
     }
+    protected $fillable = [
+        'typology'
+    ];
     use HasFactory;
 }
