@@ -24,7 +24,7 @@ class UpdateProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|unique:projects,title|min:3|max:100',
+            'title' => 'required|min:3|max:100',
             'post' => 'required|min:10|max:500',
             'author' => 'required'
         ];

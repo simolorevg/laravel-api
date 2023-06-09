@@ -9,6 +9,9 @@
             <a class="btn btn-primary my-3" href="{{ route('admin.technologies.create') }}">
                 Crea nuova tecnologia
             </a>
+            <a class="btn btn-primary my-3" href="{{ route('admin.technologies.index') }}">
+                Lista tecnologie
+            </a>
         </div>
         <table class="table rounded-2">
             <thead>
