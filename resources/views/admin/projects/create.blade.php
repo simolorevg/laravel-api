@@ -18,6 +18,18 @@
             <input type="text" name="title" id="title">
             <label for="post">Post</label>
             <textarea name="post" id="post" cols="30" rows="10"></textarea>
+            <div class="my-2">
+            </div>
+            <label for="types">Tipologie</label>
+            @foreach ($types as $type)
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="type" id="type-{{ $type->id }}"
+                        value="{{ $type->type }}">
+                    <label class="form-check-label" for="type-{{ $type->id }}">
+                        {{ $type->type }}
+                    </label>
+                </div>
+            @endforeach
             <label for="technologies">Tecnologie</label>
             @foreach ($technologies as $tech)
                 <div class="form-check">

@@ -17,7 +17,18 @@
                 <label for="title">Titolo</label>
                 <input type="text" name="title" id="title" placeholder="Titolo" value="{{ $project->title }}">
                 <label for="post">Post</label>
-                <textarea name="post" id="post" value="{{ $project->post }}" cols="30" rows="10"></textarea>
+                <textarea name="post" id="post" value="{{ $project->post }}" cols="30" rows="10">{{ $project->post }}
+                </textarea>
+                <div class="my-2">
+                    <label for="types">Tipologie</label>
+                    @foreach ($types as $type)
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="technologies[]"
+                                id="tech-{{ $type->id }}" value="{{ $type->id }}">
+                            <label for="tech-{{ $type->id }}">{{ $type->type }}</label>
+                        </div>
+                    @endforeach
+                </div>
                 @foreach ($technologies as $tech)
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="technologies[]" id="tech-{{ $tech->id }}"

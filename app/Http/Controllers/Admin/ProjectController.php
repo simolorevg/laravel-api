@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Technology;
+use App\Models\Type;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -31,8 +32,9 @@ class ProjectController extends Controller
     public function create()
     {
         $technologies = Technology::all();
+        $types = Type::all();
         $project = new Project();
-        return view('admin.projects.create', compact('technologies'));
+        return view('admin.projects.create', compact('technologies', 'types'));
     }
 
     /**
@@ -47,6 +49,10 @@ class ProjectController extends Controller
         $newproject = new Project();
         $newproject->fill($data);
         $newproject->save();
+        $types = $request->input('types');
+        if ($types) {
+            $newproject->type()->input('type');
+        }
         $technologies = $request->input('technologies', []);
         if ($technologies) {
             $newproject->technologies()->attach($technologies);
@@ -87,6 +93,10 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $data = $request->validated();
+        $types = $request->input('types');
+        if ($types) {
+            $project->type()->input('type');
+        }
         $technologies = $request->input('technologies', []);
         if ($technologies) {
             $project->technologies()->sync($technologies = $request->input('technologies'));
