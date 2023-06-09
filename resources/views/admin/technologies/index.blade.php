@@ -2,6 +2,9 @@
 @section('content')
     <h2 class="text-center">Lista Tecnologie</h2>
     <div class="my-container my-2">
+        <a class="btn btn-primary my-2" href="{{ route('admin.projects.index') }}">
+            Torna alla home
+        </a>
         <table class="table rounded-2">
             <thead>
                 <tr>
