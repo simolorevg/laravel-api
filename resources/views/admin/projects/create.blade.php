@@ -2,8 +2,8 @@
 @section('content')
     <h2 class="text-center">Crea un progetto</h2>
     <div class="my-container my-2">
-        <form action="{{ route('admin.projects.store', 'admin.tecnologies.store') }}" method="POST"
-            class="d-flex flex-column">
+        <form action="{{ route('admin.projects.store', 'admin.tecnologies.store') }}" enctype="multipart/form-data"
+            method="POST" class="d-flex flex-column">
             @csrf
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -40,6 +40,10 @@
             @endforeach
             <label for="author">Autore</label>
             <input type="text" name="author" id="author" value="{{ Auth::user()->name }}">
+            <div class="mb-3">
+                <label for="image" class="form-label">Immagine</label>
+                <input class="form-control" type="file" id="image" name="image">
+              </div>
             <button type="submit" class="btn btn-primary my-3">INVIA</button>
         </form>
     </div>
