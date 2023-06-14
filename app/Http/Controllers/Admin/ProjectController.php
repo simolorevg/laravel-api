@@ -50,10 +50,7 @@ class ProjectController extends Controller
         $newproject = new Project();
         $newproject->fill($data);
         $newproject->save();
-        $types = $request->input('types');
-        if ($types) {
-            $newproject->type()->input('type');
-        }
+        $data['type'] = $request->input('types');
         $technologies = $request->input('technologies', []);
         if ($technologies) {
             $newproject->technologies()->attach($technologies);
@@ -94,7 +91,7 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $data = $request->validated();
-        $types = $request->input('types');
+        $types = $request->input('type');
         if ($types) {
             $project->type()->input('type');
         }

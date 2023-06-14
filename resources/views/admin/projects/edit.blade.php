@@ -20,10 +20,10 @@
                 <textarea name="post" id="post" value="{{ $project->post }}" cols="30" rows="10">{{ $project->post }}
                 </textarea>
                 <div class="my-2">
-                    <label for="types">Tipologie</label>
+                    <label for="type">Tipologie</label>
                     @foreach ($types as $type)
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="type" id="type-{{ $type->id }}"
+                            <input class="form-check-input" type="radio" name="type" id="type-{{ $type->id }}"
                                 value="{{ $type->id }}">
                             <label for="type-{{ $type->id }}">{{ $type->type }}</label>
                         </div>
