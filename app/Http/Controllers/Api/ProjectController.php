@@ -10,7 +10,7 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::with('technology')->paginate(3);;
+        $projects = Project::with('technologies')->get();
         return response()->json([
             'success' => true,
             'results' => $projects
