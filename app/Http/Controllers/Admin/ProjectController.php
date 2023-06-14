@@ -47,10 +47,11 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         $data = $request->validated();
+        // dd($data);
         $newproject = new Project();
         $newproject->fill($data);
         $newproject->save();
-        $data['type'] = $request->input('types');
+        // $data['type'] = $request->input('types');
         $technologies = $request->input('technologies', []);
         if ($technologies) {
             $newproject->technologies()->attach($technologies);
@@ -78,7 +79,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $technologies = Technology::all();
-        return view('admin.projects.edit', compact('project', 'technologies'));
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project', 'technologies', 'types'));
     }
 
     /**
@@ -91,10 +93,10 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $data = $request->validated();
-        $types = $request->input('type');
-        if ($types) {
-            $project->type()->input('type');
-        }
+        // $types = $request->input('type');
+        // if ($types) {
+        //     $project->type()->input('type');
+        // }
         $technologies = $request->input('technologies', []);
         if ($technologies) {
             $project->technologies()->sync($technologies = $request->input('technologies'));

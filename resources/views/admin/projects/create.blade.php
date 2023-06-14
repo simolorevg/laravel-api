@@ -23,8 +23,8 @@
             <label for="types">Tipologie</label>
             @foreach ($types as $type)
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="type" id="type-{{ $type->id }}"
-                        value="{{ $type->type }}">
+                    <input class="form-check-input" type="radio" name="type_id" id="type-{{ $type->id }}"
+                        value="{{ $type->id }}">
                     <label class="form-check-label" for="type-{{ $type->id }}">
                         {{ $type->type }}
                     </label>
