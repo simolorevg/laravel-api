@@ -35,7 +35,7 @@
                         <td>{{ $project->type?->type }}</td>
                         <td>
                             @forelse ($project->technologies as $technology)
-                                {{ $technology->typology }}
+                                {{ $technology->name }}
                             @empty
                                 <p>Nessuna technologia</p>
                             @endforelse

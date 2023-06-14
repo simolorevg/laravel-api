@@ -35,15 +35,11 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="technologies[]" id="tech-{{ $tech->id }}"
                         value="{{ $tech->id }}">
-                    <label for="tech-{{ $tech->id }}">{{ $tech->typology }}</label>
+                    <label for="tech-{{ $tech->id }}">{{ $tech->name }}</label>
                 </div>
             @endforeach
             <label for="author">Autore</label>
             <input type="text" name="author" id="author" value="{{ Auth::user()->name }}">
-            <div class="mb-3">
-                <label for="image" class="form-label">Immagine</label>
-                <input class="form-control" type="file" id="image" name="image">
-              </div>
             <button type="submit" class="btn btn-primary my-3">INVIA</button>
         </form>
     </div>

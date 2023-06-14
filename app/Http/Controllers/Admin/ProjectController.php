@@ -48,7 +48,6 @@ class ProjectController extends Controller
     {
         $data = $request->validated();
         $newproject = new Project();
-        $img_path = Storage::put('uploads', $data['image']);
         $newproject->fill($data);
         $newproject->save();
         $types = $request->input('types');

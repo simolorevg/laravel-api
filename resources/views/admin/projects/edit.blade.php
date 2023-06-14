@@ -23,9 +23,9 @@
                     <label for="types">Tipologie</label>
                     @foreach ($types as $type)
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="technologies[]"
-                                id="tech-{{ $type->id }}" value="{{ $type->id }}">
-                            <label for="tech-{{ $type->id }}">{{ $type->type }}</label>
+                            <input class="form-check-input" type="checkbox" name="type" id="type-{{ $type->id }}"
+                                value="{{ $type->id }}">
+                            <label for="type-{{ $type->id }}">{{ $type->type }}</label>
                         </div>
                     @endforeach
                 </div>
@@ -33,7 +33,7 @@
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="technologies[]" id="tech-{{ $tech->id }}"
                             value="{{ $tech->id }}">
-                        <label for="tech-{{ $tech->id }}">{{ $tech->typology }}</label>
+                        <label for="tech-{{ $tech->id }}">{{ $tech->name }}</label>
                     </div>
                 @endforeach
                 <label for="author">Autore</label>

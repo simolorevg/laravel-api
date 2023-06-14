@@ -21,7 +21,6 @@ class ProjectsTableSeeder extends Seeder
             $newProject->title = $faker->word();
             $newProject->post = $faker->paragraph();
             $newProject->author = $faker->name();
-            $newProject->image = $faker->image(null, $width = 640, $height = 480, 'cats');
             $newProject->save();
         }
     }

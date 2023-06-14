@@ -7,7 +7,7 @@
     </p>
     Tecnologia/Tecnologie:
     @forelse ($project->technologies as $technology)
-        {{ $technology->typology }}
+        {{ $technology->name }}
     @empty
         Nessuna technologia
     @endforelse

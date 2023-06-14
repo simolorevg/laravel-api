@@ -19,7 +19,6 @@ class Project extends Model
         'title',
         'post',
         'author',
-        'image'
     ];
     use HasFactory;
 }

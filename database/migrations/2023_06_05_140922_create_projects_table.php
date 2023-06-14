@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('title');
             $table->text('post');
             $table->string('author');
-            $table->string('image');
             $table->timestamps();
         });
     }
