@@ -18,7 +18,7 @@ class TechnologiesTableSeeder extends Seeder
         $technologies = ['HTML', 'CSS', 'JavaScript', 'VueJS', 'PHP', 'Laravel', 'MySQL'];
         foreach ($technologies as $technology) {
             $newTech = new Technology();
-            $newTech->typology = $technology;
+            $newTech->name = $technology;
             $newTech->save();
         }
     }
