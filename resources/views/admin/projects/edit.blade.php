@@ -2,7 +2,8 @@
 @section('content')
     <div class="container">
         <div class="my-container my-3">
-            <form action="{{ route('admin.projects.update', $project) }}" method="POST" class="d-flex flex-column">
+            <form action="{{ route('admin.projects.update', $project) }}" enctype="multipart/form-data" method="POST"
+                class="d-flex flex-column">
                 @csrf
                 @method('PUT')
                 @if ($errors->any())
@@ -38,6 +39,10 @@
                 @endforeach
                 <label for="author">Autore</label>
                 <input type="text" name="author" id="author" value="{{ $project->author }}">
+                <div class="mb-3">
+                    <label for="image" class="form-label">Immagine</label>
+                    <input class="form-control" type="file" id="image">
+                </div>
                 <button type="submit" class="btn btn-primary my-3">INVIA</button>
             </form>
         </div>

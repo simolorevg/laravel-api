@@ -10,10 +10,18 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $projects = Project::with('technologies')->get();
+        $projects = Project::with(['technologies'], ['types'])->get();
         return response()->json([
             'success' => true,
             'results' => $projects
+        ]);
+    }
+    public function show($id)
+    {
+        $project = Project::findOrFail($id);
+        return response()->json([
+            'success' => true,
+            'results' => $project
         ]);
     }
 }

@@ -20,7 +20,7 @@
             <textarea name="post" id="post" cols="30" rows="10"></textarea>
             <div class="my-2">
             </div>
-            <label for="types">Tipologie</label>
+            <label for="types" class="my-2">Tipologie</label>
             @foreach ($types as $type)
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="type_id" id="type-{{ $type->id }}"
@@ -30,7 +30,7 @@
                     </label>
                 </div>
             @endforeach
-            <label for="technologies">Tecnologie</label>
+            <label for="technologies" class="my-2">Tecnologie</label>
             @foreach ($technologies as $tech)
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" name="technologies[]" id="tech-{{ $tech->id }}"
@@ -40,6 +40,10 @@
             @endforeach
             <label for="author">Autore</label>
             <input type="text" name="author" id="author" value="{{ Auth::user()->name }}">
+            <div class="mb-3">
+                <label for="image" class="form-label">Immagine</label>
+                <input class="form-control" type="file" id="image">
+            </div>
             <button type="submit" class="btn btn-primary my-3">INVIA</button>
         </form>
     </div>

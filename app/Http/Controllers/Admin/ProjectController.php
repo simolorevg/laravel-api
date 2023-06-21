@@ -10,6 +10,7 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
@@ -49,10 +50,14 @@ class ProjectController extends Controller
         $data = $request->validated();
         // dd($data);
         $newproject = new Project();
+        if ($request->hasfile('image')) {
+            $path = Storage::disk('public')->put('project_images', $request->image);
+            $data['image'] = $path;
+        }
         $newproject->fill($data);
         $newproject->save();
-        // $data['type'] = $request->input('types');
         $technologies = $request->input('technologies', []);
+        Mail::to('hello@example.com');
         if ($technologies) {
             $newproject->technologies()->attach($technologies);
         }
@@ -93,10 +98,6 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $data = $request->validated();
-        // $types = $request->input('type');
-        // if ($types) {
-        //     $project->type()->input('type');
-        // }
         $technologies = $request->input('technologies', []);
         if ($technologies) {
             $project->technologies()->sync($technologies = $request->input('technologies'));

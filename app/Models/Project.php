@@ -19,7 +19,8 @@ class Project extends Model
         'title',
         'post',
         'author',
-        'type_id'
+        'type_id',
+        'project_images'
     ];
     use HasFactory;
 }
